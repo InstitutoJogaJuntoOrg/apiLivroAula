@@ -10,12 +10,14 @@ class Author(models.Model):
         verbose_name_plural = "Autores"
 
 class Gender(models.Model):
-    name = models.CharField(max_length=50, unique=True, verbose_name="Nome")
+    name = models.CharField(max_length=50, verbose_name="Nome")
+    squad = models.CharField(max_length=30, verbose_name="Squad", default="Joga Junto" )
 
     def __str__(self):
         return self.name
     class Meta:
         verbose_name = "Genero"
+        unique_together = (('name', 'squad'))
 
 class Books(models.Model):
     title = models.CharField(max_length=100, verbose_name="Nome do livro")
