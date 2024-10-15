@@ -18,7 +18,7 @@ class BooksSerializer(serializers.ModelSerializer):
     # import ipdb; ipdb.set_trace()
     class Meta:
         model = Books
-        fields = ['title', 'description', 'author', 'gender']
+        fields = '__all__'
 
     # def create(self, validated_data):
     #     # author_name = validated_data.pop('author')
